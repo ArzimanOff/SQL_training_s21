@@ -1,4 +1,5 @@
-SELECT DISTINCT person.name as person_name,
+SELECT DISTINCT 
+	person.name as person_name,
 	pizza_name,
 	pizzeria.name AS pizzeria_name
 FROM person
