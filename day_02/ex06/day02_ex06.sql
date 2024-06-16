@@ -11,8 +11,8 @@ FROM
 		FROM person
 		WHERE person.name = 'Anna' OR person.name = 'Denis'
 	) AS id_of_need_person
-	 -- сохраняем в таблицу id_of_need_person один столбец this_id 
-	 -- в котором перечисляются id пользователей 'Anna' и 'Denis'
+	 -- СЃРѕС…СЂР°РЅСЏРµРј РІ С‚Р°Р±Р»РёС†Сѓ id_of_need_person РѕРґРёРЅ СЃС‚РѕР»Р±РµС† this_id 
+	 -- РІ РєРѕС‚РѕСЂРѕРј РїРµСЂРµС‡РёСЃР»СЏСЋС‚СЃСЏ id РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ 'Anna' Рё 'Denis'
 	
 WHERE 
 	id_of_need_person.this_id = person_order.person_id
