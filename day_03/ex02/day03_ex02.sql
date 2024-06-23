@@ -1,26 +1,16 @@
-WITH isNotOrder AS (
-    SELECT
-        id as menu_id
-    FROM
-        menu
-    WHERE
-        NOT EXISTS (
-            SELECT
-                person_order.menu_id
-            FROM
-                person_order
-            WHERE
-                person_order.menu_id = menu.id
-            )
-    ORDER BY menu_id
+WITH notOrderPizza AS (
+	SELECT id FROM menu
+	EXCEPT
+	SELECT DISTINCT menu_id FROM person_order
 )
 
-SELECT
-    menu.pizza_name,
-    menu.price,
-    pizzeria.name
-FROM
-    isNotOrder
-    JOIN menu ON isNotOrder.menu_id = menu.id
-    JOIN pizzeria ON menu.pizzeria_id = pizzeria.id
-ORDER BY menu.pizza_name, menu.price;
+SELECT 
+	pizza_name,
+	price,
+	pizzeria.name AS pizzeria_name
+FROM 
+	notOrderPizza
+	JOIN menu ON notOrderPizza.id = menu.id
+	JOIN pizzeria ON pizzeria.id = menu.pizzeria_id
+ORDER BY pizza_name, price
+
