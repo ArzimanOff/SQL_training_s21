@@ -1,4 +1,7 @@
-WITH male as (
+WITH 
+
+-- табличка с названиями пиццерий куда приходили мужчины
+male as (
     SELECT
         pizzeria.name
     FROM
@@ -8,7 +11,9 @@ WITH male as (
     WHERE
         person.gender = 'male'
     ),
-    female as (
+
+-- табличка с названиями пиццерий куда приходили женщины
+female as (
     SELECT
         pizzeria.name
     FROM
@@ -18,14 +23,18 @@ WITH male as (
     WHERE
         person.gender = 'female'
     ),
-    male_only as (
+
+-- табличка с названиями пиццерий куда приходили ТОЛЬКО мужчины
+male_only as (
     SELECT * FROM
         male
     EXCEPT ALL
     SELECT * FROM
         female
     ),
-    female_only as (
+
+-- табличка с названиями пиццерий куда приходили ТОЛЬКО женщины
+female_only as (
     SELECT * FROM
         female
     EXCEPT ALL
@@ -34,6 +43,8 @@ WITH male as (
     FROM
         male
     )
+
+
 SELECT * FROM
     male_only
 UNION ALL

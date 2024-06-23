@@ -24,7 +24,9 @@ male_table AS (
         tables
     WHERE
         tables.gender = 'female'
-) (
+) 
+
+(
     SELECT
         name
     FROM
