@@ -1,4 +1,6 @@
-CREATE VIEW v_symmetric_union AS WITH R AS (
+CREATE VIEW v_symmetric_union AS 
+WITH 
+R AS (
     SELECT
         person_visits.person_id
     FROM
