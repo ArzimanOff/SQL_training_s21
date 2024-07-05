@@ -1,11 +1,13 @@
-CREATE VIEW v_price_with_discount AS
-SELECT
-    person.name,
-    menu.pizza_name,
-    menu.price,
-    ROUND(menu.price - menu.price * 0.1) as discount_price
-FROM
-    person_order
-    JOIN person ON person_order.person_id = person.id
-    JOIN menu ON person_order.menu_id = menu.id
-ORDER BY person.name, menu.pizza_name;
+CREATE UNIQUE INDEX idx_person_order_order_date ON person_order(person_id, menu_id, order_date)
+WHERE order_date = '2022-01-01';
+
+SET enable_seqscan = false;
+EXPLAIN ANALYZE
+
+SELECT person_id, menu_id
+FROM person_order
+WHERE menu_id = 1 AND person_id = 1 AND order_date = '2022-01-01';
+
+SELECT *
+FROM pg_catalog.pg_class
+WHERE pg_catalog.pg_class.relname = 'idx_person_order_order_date';
