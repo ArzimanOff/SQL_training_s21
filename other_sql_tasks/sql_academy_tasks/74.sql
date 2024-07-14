@@ -1,4 +1,4 @@
--- https://sql-academy.org/ru/trainer/tasks/60
+-- https://sql-academy.org/ru/trainer/tasks/74
 
 SELECT id,
 CASE
