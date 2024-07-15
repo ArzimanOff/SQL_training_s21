@@ -58,3 +58,13 @@
 <h5>
   В каждом файле решения задания можно найти комментарий с прямой ссылкой на задание в песочнице, где и следует запускать решения, так как скрипта для создания и заполнения таблиц нет.
 </h5>
+
+<hr>
+
+<h3>
+  Задания из <a href="https://leetcode.com/studyplan/top-sql-50/">подборки leetcode "SQL 50"</a> 
+  буду храниться в <a href="https://github.com/ArzimanOff/SQL_training_s21/tree/main/other_sql_tasks/leetcode_tasks">"other_sql_tasks/leetcode_tasks"</a>
+</h3>
+<h5>
+  В каждом файле решения задания можно найти комментарий с прямой ссылкой на задание
+</h5>
