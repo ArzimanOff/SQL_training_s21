@@ -1,3 +1,5 @@
+-- https://leetcode.com/problems/average-time-of-process-per-machine/description/?envType=study-plan-v2&envId=top-sql-50
+
 SELECT 
     a1.machine_id,
     round(avg(a2.timestamp-a1.timestamp), 3) as processing_time
