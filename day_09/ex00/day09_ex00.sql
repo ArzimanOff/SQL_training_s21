@@ -1,5 +1,5 @@
 --  Создание таблицы аудита person_audit (создается если еще не существует)
-create table if not exists person_audit
+CREATE TABLE IF NOT EXISTS person_audit
 (
     created timestamp with time zone not null default current_timestamp,
     -- столбец created сохраняет время, когда запись была добавлена в таблицу
@@ -19,7 +19,7 @@ create table if not exists person_audit
 );
 
 -- Создание функции триггера fnc_trg_person_insert_audit
-create or replace function fnc_trg_person_insert_audit()
+CREATE OR REPLACE FUNCTION fnc_trg_person_insert_audit()
 RETURNS TRIGGER AS $$
 BEGIN
     IF TG_OP = 'INSERT' THEN
@@ -31,7 +31,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-create trigger trg_person_insert_audit
+CREATE TRIGGER trg_person_insert_audit
     after insert
     on person
     for each row
@@ -40,4 +40,5 @@ create trigger trg_person_insert_audit
 INSERT INTO person(id, name, age, gender, address)
 VALUES (10, 'Damir', 22, 'male', 'Irkutsk');
 
-SELECT * FROM person_audit;
+-- SELECT * FROM person;
+-- SELECT * FROM person_audit;
