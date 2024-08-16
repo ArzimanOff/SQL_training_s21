@@ -8,9 +8,9 @@ CREATE OR REPLACE FUNCTION fnc_persons_female()
                 address   varchar
             )
 AS $$
-SELECT id, name, age, gender, address
-FROM person
-WHERE gender = 'female';
+    SELECT id, name, age, gender, address
+    FROM person
+    WHERE gender = 'female';
 $$ LANGUAGE SQL;
 
 
@@ -24,9 +24,9 @@ CREATE OR REPLACE FUNCTION fnc_persons_male()
                 address   varchar
             )
 AS $$
-SELECT id, name, age, gender, address
-FROM person
-WHERE gender = 'male';
+    SELECT id, name, age, gender, address
+    FROM person
+    WHERE gender = 'male';
 $$ LANGUAGE SQL;
 
 SELECT * FROM fnc_persons_female();
