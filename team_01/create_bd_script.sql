@@ -3,9 +3,9 @@ create table "user"
  name varchar,
  lastname varchar);
 
-insert into "user" values (1,'РРІР°РЅ', 'РРІР°РЅРѕРІ');
-insert into "user" values (2,'РџРµС‚СЂ', null);
-insert into "user" values (3, null, 'РЎРёРґРѕСЂРѕРІ');
+insert into "user" values (1,'Иван', 'Иванов');
+insert into "user" values (2,'Петр', null);
+insert into "user" values (3, null, 'Сидоров');
 
 create table currency(
     id bigint not null ,

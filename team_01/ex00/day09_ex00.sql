@@ -1,3 +1,5 @@
+-- https://sql-academy.org/ru/trainer/tasks/9
+
 WITH last_rate(id, name, last_rate_to_usd) AS
 (
 	SELECT DISTINCT
